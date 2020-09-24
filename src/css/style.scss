@@ -1,0 +1,339 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+
+// FONT IMPORT
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @include font_regular($f_S, normal);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: $c_black;
+    padding: 20px;
+
+    @include media_query($laptop) {
+        padding: 40px;
+    }
+}
+
+// SUN & MOON THEME CHANGE ICONS CSS START
+.theme-icon {
+    cursor: pointer;
+}
+
+img.theme-icon {
+    position: absolute;
+    width: 30px;
+    right: 20px;
+    top: 20px;
+    z-index: 2;
+}
+
+// SUN & MOON THEME CHANGE ICONS CSS END
+
+// NAVBAR START
+.navbar {
+    position: relative;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media_query($laptop) {
+        padding: 20px;
+    }
+}
+
+img.navbar-logo {
+    width: 60px;
+
+    @include media_query($mobile) {
+        width: 80px;
+    }
+
+    @include media_query($laptop) {
+        width: 100px;
+    }
+}
+
+// BURGER MENU ICONS START
+#navbar-burger {
+    cursor: pointer;
+    order: 1;
+
+    @include media_query($tablet) {
+        display: none;
+    }
+}
+
+.material-icons {
+    font-size: 2rem;
+
+    @include media_query($mobile) {
+        font-size: 2.5rem;
+    }
+
+    @include media_query($tablet) {
+        font-size: 3rem;
+    }
+}
+
+
+
+// BURGER MENU ICONS END
+
+.navbar-links {
+    @include font_accent(1.5rem, normal);
+    position: absolute;
+    top: 140px;
+    left: 0px;
+    right: 0px;
+    z-index: 2;
+    width: 100%;
+    max-width: $tablet;
+    line-height: 4rem;
+    background-color: $c_black;
+    color: $c_title_white;
+    padding: 40px 0;
+    margin-top: 20px;
+    display: none; // flex when on tablet
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include media_query($tablet) {
+        position: initial;
+        display: flex;
+        flex-direction: row;
+        background-color: #fff;
+        color: $c_black;
+        padding: 20px;
+
+    }
+}
+
+.navbar-link {
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        width: 100%;
+        background-color: #ffd166c0;
+        transform: scale(0.85);
+    }
+}
+
+// NAVBAR END
+
+// MAIN CONTENT START
+.main-content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    flex: 1;
+}
+
+.group-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+    align-items: center;
+}
+
+.group-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.main-content-title {
+    @include font_accent($f_M, normal);
+    font-weight: bold;
+
+    @include media_query($mobile) {
+        font-size: $f_L;
+    }
+
+    @include media_query($tablet) {
+        font-size: $f_XL;
+    }
+
+    @include media_query($laptop) {
+        font-size: $f_XXL;
+    }
+}
+
+span.accent {
+    font-size: $f_XXL;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+}
+
+img.main-content-img {
+    margin-top: 40px;
+    width: 164px;
+
+    @include media_query($mobile) {
+        width: 200px;
+    }
+
+    @include media_query($laptop) {
+        display: none;
+    }
+
+}
+
+.main-content-p {
+    margin-top: 40px;
+    padding: 10px;
+    font-size: $f_XS;
+    line-height: 2rem;
+    letter-spacing: 0.2rem;
+
+    @include media_query($mobile) {
+        width: 90%;
+        font-size: $f_S;
+    }
+
+    @include media_query($laptop) {
+        width: 100%;
+        font-size: 1.25rem;
+    }
+}
+
+.main-content-skills {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.skills-title {
+    margin-bottom: 40px;
+    @include font_accent($f_XL, normal);
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+
+    @include media_query($mobile) {
+        font-size: $f_XXL;
+    }
+}
+
+.skills-imgs {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img.skills-img {
+    width: 100px;
+    margin: 20px 0;
+
+    @include media_query($mobile) {
+        width: 120px;
+    }
+}
+
+// MAIN CONTENT END
+
+// FOOTER START
+.copyright {
+    padding: 20px;
+    margin-top: 40px;
+
+}
+
+// FOOTER END
+
+// SCROLL UP BTN START
+.scroll-up {
+    border: none;
+    background-color: transparent;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    outline: 0;
+    transition: ease-in-out 0.3s all;
+
+    &:hover {
+        background-color: #ffd166c0;
+        border-radius: 50%;
+    }
+}
+
+// SCROLL UP BTN END
+
+// HELPER CLASSES START
+.light-theme {
+    background-color: $c_white;
+    color: $c_black;
+}
+
+.dark-theme {
+    background-color: $c_black;
+    color: $c_title_white;
+}
+
+.border-dark {
+    border: 8px solid $c_black;
+}
+
+.border-light {
+    border: 8px solid $c_title_white;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.accent {
+    color: $c_accent;
+}
+
+.left {
+    align-self: flex-start;
+}
+
+// HELPER CLASSES END

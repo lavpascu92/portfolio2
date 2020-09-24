@@ -1,0 +1,33 @@
+//*************
+// FONT MIXINS
+//*************
+@mixin font_accent($font_size, $font_style) {
+    font-family: 'Spectral', serif;
+    font-weight: 400;
+    font-size: $font_size;
+    font-style: $font_style;
+}
+
+@mixin font_regular($font_size, $font_style) {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: $font_size;
+    font-style: $font_style;
+}
+
+@mixin font_bold($font_size, $font_style) {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: $font_size;
+    font-style: $font_style;
+}
+
+
+//****************
+// MEDIA QUERIES
+//****************
+@mixin media_query($breakpoint) {
+    @media (min-width: #{$breakpoint}) {
+        @content;
+    }
+}
