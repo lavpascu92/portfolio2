@@ -241,6 +241,8 @@ img.navbar-logo {
 }
 
 .main-content-title {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   font-family: 'Spectral', serif;
   font-weight: 400;
   font-size: 1.25rem;
@@ -305,8 +307,8 @@ img.main-content-img {
   margin-top: 40px;
   padding: 10px;
   font-size: 0.85rem;
-  line-height: 2rem;
-  letter-spacing: 0.2rem;
+  line-height: 1.6em;
+  letter-spacing: 0.035em;
 }
 
 @media (min-width: 500px) {
@@ -388,20 +390,24 @@ img.main-content-img {
 }
 
 img.skills-img {
-  width: 74px;
-  margin: 20px 0;
-}
-
-@media (min-width: 500px) {
-  img.skills-img {
-    width: 96px;
-  }
+  width: 48px;
+  margin: 20px;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 @media (min-width: 976px) {
   img.skills-img {
-    width: 120px;
+    width: 72px;
   }
+}
+
+img.skills-img:hover {
+  -webkit-filter: none;
+          filter: none;
 }
 
 .copyright {

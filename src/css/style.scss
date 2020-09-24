@@ -178,6 +178,7 @@ img.navbar-logo {
 
 
 .main-content-title {
+    align-self: flex-start;
     @include font_accent($f_M, normal);
     font-weight: bold;
 
@@ -226,8 +227,8 @@ img.main-content-img {
     margin-top: 40px;
     padding: 10px;
     font-size: $f_XS;
-    line-height: 2rem;
-    letter-spacing: 0.2rem;
+    line-height: 1.6em;
+    letter-spacing: 0.035em;
 
     @include media_query($mobile) {
         width: 90%;
@@ -276,15 +277,18 @@ img.main-content-img {
 }
 
 img.skills-img {
-    width: 74px;
-    margin: 20px 0;
-
-    @include media_query($mobile) {
-        width: 96px;
-    }
+    width: 48px;
+    margin: 20px;
+    filter: grayscale(100%);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 
     @include media_query($laptop) {
-        width: 120px;
+        width: 72px;
+    }
+
+    &:hover {
+        filter: none;
     }
 }
 
@@ -353,5 +357,7 @@ img.skills-img {
 .left {
     align-self: flex-start;
 }
+
+
 
 // HELPER CLASSES END
