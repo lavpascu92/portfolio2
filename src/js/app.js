@@ -12,20 +12,17 @@ window.addEventListener('load', () => {
     let scrollUpBtn = document.querySelector('#scroll-up');
     const laptopImg = document.querySelector('#laptop-img');
     let isToggle = false;
+    let windowWidth = window.innerWidth;
 
-    // Don't show  laptop-img on mobile/tablet
-    laptopImg.style.display = "none";
+    // Don't show  laptop-img on mobile/tablet on first load
+    showOnlyOnLaptop(windowWidth);
 
     // EVENT LISTENERS
 
-    // Display img only on laptop
+    // Display img only on laptop when resizing window
     window.addEventListener("resize", () => {
         let width = window.innerWidth;
-        if (width > 1200) {
-            laptopImg.style.display = "block";
-        } else {
-            laptopImg.style.display = "none";
-        }
+        showOnlyOnLaptop(width);
     });
 
     // Show mobile/tablet menu on burger click
@@ -63,19 +60,27 @@ window.addEventListener('load', () => {
         isToggle = !isToggle;
     });
 
-    // SCROLL UP TO TOP ON CLICK
-    // window.onscroll = () => {
-    //     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    //         scrollUpBtn.style.display = "block";
-    //     } else {
-    //         scrollUpBtn.sytle.display = "none";
-    //     }
-    // }; // gives undefined error
-
+    // Display the scroll-up btn only after scrolling 100px
+    window.onscroll = () => {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollUpBtn.style.display = "inline";
+        } else {
+            scrollUpBtn.style.display = "none";
+        }
+    };
+    //Scroll up to top on click
     scrollUpBtn.addEventListener('click', () => {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     });
 
+    // FUNCTIONS
+    function showOnlyOnLaptop(width) {
+        if (width < 1200) {
+            laptopImg.style.display = "none";
+        } else {
+            laptopImg.style.display = "block";
+        }
+    }
 
 });

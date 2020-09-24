@@ -132,7 +132,7 @@ img.navbar-logo {
   font-size: 1.5rem;
   font-style: normal;
   position: absolute;
-  top: 140px;
+  top: 100px;
   left: 0px;
   right: 0px;
   z-index: 2;
@@ -267,9 +267,21 @@ img.navbar-logo {
 }
 
 span.accent {
-  font-size: 2.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: 0.2rem;
+}
+
+@media (min-width: 500px) {
+  span.accent {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  span.accent {
+    font-size: 2.5rem;
+  }
 }
 
 img.main-content-img {
@@ -333,7 +345,7 @@ img.main-content-img {
   margin-bottom: 40px;
   font-family: 'Spectral', serif;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: bold;
   display: -webkit-box;
@@ -346,7 +358,13 @@ img.main-content-img {
 
 @media (min-width: 500px) {
   .skills-title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .skills-title {
+    font-size: 2rem;
   }
 }
 
@@ -370,11 +388,17 @@ img.main-content-img {
 }
 
 img.skills-img {
-  width: 100px;
+  width: 74px;
   margin: 20px 0;
 }
 
 @media (min-width: 500px) {
+  img.skills-img {
+    width: 96px;
+  }
+}
+
+@media (min-width: 976px) {
   img.skills-img {
     width: 120px;
   }
@@ -386,6 +410,7 @@ img.skills-img {
 }
 
 .scroll-up {
+  display: none;
   border: none;
   background-color: transparent;
   position: fixed;

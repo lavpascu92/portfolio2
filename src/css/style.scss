@@ -109,7 +109,7 @@ img.navbar-logo {
 .navbar-links {
     @include font_accent(1.5rem, normal);
     position: absolute;
-    top: 140px;
+    top: 100px;
     left: 0px;
     right: 0px;
     z-index: 2;
@@ -195,9 +195,17 @@ img.navbar-logo {
 }
 
 span.accent {
-    font-size: $f_XXL;
+    font-size: $f_M;
     font-weight: bold;
     letter-spacing: 0.2rem;
+
+    @include media_query($mobile) {
+        font-size: $f_L;
+    }
+
+    @include media_query($tablet) {
+        font-size: $f_XXL;
+    }
 }
 
 img.main-content-img {
@@ -243,14 +251,19 @@ img.main-content-img {
 
 .skills-title {
     margin-bottom: 40px;
-    @include font_accent($f_XL, normal);
+    @include font_accent($f_M, normal);
     font-weight: bold;
     display: flex;
     justify-content: flex-start;
 
     @include media_query($mobile) {
-        font-size: $f_XXL;
+        font-size: $f_L;
     }
+
+    @include media_query($tablet) {
+        font-size: $f_XL;
+    }
+
 }
 
 .skills-imgs {
@@ -263,10 +276,14 @@ img.main-content-img {
 }
 
 img.skills-img {
-    width: 100px;
+    width: 74px;
     margin: 20px 0;
 
     @include media_query($mobile) {
+        width: 96px;
+    }
+
+    @include media_query($laptop) {
         width: 120px;
     }
 }
@@ -284,6 +301,7 @@ img.skills-img {
 
 // SCROLL UP BTN START
 .scroll-up {
+    display: none;
     border: none;
     background-color: transparent;
     position: fixed;
