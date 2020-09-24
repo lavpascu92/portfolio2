@@ -1,0 +1,31 @@
+//**********
+// COLORS 
+//**********
+$c_white: #fff;
+$c_black: #000;
+$c_dark: #1f2022;
+$c_title_white: #e0e0e0;
+$c_title_onColor: #f1f1f1;
+$c_accent: #ffd166;
+$hover_gradient: linear-gradient(319deg, rgba(239, 71, 111, 0.9528186274509804) 0%, rgba(255, 209, 102, 1) 51%);
+
+//*************
+// FONT SIZES
+//*************
+$f_XXS: 0.75rem;
+$f_XS: 0.85rem;
+$f_S: 1rem;
+$f_M: 1.25rem;
+$f_L: 1.5rem;
+$f_XL: 2rem;
+$f_XXL: 2.5rem;
+$f_XXXL: 3rem;
+
+//*************
+// BREAKPOINTS
+//************
+$mobile: 500px;
+$tablet: 768px;
+$laptop: 976px;
+$desktop: 1240px;
+$large_desktop: 1440px;
