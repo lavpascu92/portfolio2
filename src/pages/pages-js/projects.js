@@ -7,15 +7,17 @@ window.addEventListener('load', () => {
     const navbarLinksDivEl = document.querySelector("#navbar-links");
     const themeIconImgEl = document.querySelector('#theme-icon');
     const mainDivEl = document.querySelector('#main');
-    const logoImgEl = document.querySelector('#logo');
-    const mainImgEl = document.querySelector('#main-img');
     let scrollUpBtn = document.querySelector('#scroll-up');
-    const laptopImg = document.querySelector('#laptop-img');
+    const cards = document.querySelectorAll('.card');
     let isToggle = false;
-    let windowWidth = window.innerWidth;
 
 
-
+    // FLIP ON CLICK ANIMATION ON EACH CARD
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('flip-animation');
+        });
+    });
     // Show mobile/tablet menu on burger click
     burgerMenu.addEventListener('click', () => {
         // Show/hide menu on click
@@ -23,11 +25,9 @@ window.addEventListener('load', () => {
         // Change menu icon from burger to close on click
         if (burgerMenuIcon.textContent === "menu") {
             burgerMenuIcon.textContent = "close";
-
         } else {
             burgerMenuIcon.textContent = "menu";
         }
-
     });
 
     // Change color scheme on moon/sun icon click
@@ -60,8 +60,5 @@ window.addEventListener('load', () => {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     });
-
-    // FUNCTIONS
-
 
 });

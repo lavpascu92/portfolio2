@@ -90,17 +90,23 @@ img.navbar-logo {
     }
 }
 
+// MATERIAL ICONS CSS START
 .material-icons {
-    font-size: 2rem;
+    cursor: pointer;
+    font-size: 1.5rem;
 
     @include media_query($mobile) {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
-    @include media_query($tablet) {
-        font-size: 3rem;
-    }
 }
+
+.arrow-right {
+    border: none;
+    background-color: transparent;
+}
+
+// MATERIAL ICONS CSS END
 
 // BURGER MENU ICONS END
 .navbar-links {
@@ -154,13 +160,17 @@ img.navbar-logo {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-self: center;
+    // align-self: center;
     flex: 1;
 }
 
 .main-content-title {
     @include font_accent($f_M, normal);
     align-self: flex-start;
+
+    @include media_query($tablet) {
+        font-size: $f_L;
+    }
 }
 
 span.accent {
@@ -173,7 +183,7 @@ span.accent {
     }
 
     @include media_query($tablet) {
-        font-size: $f_XXL;
+        font-size: $f_XL;
     }
 }
 
@@ -182,35 +192,44 @@ span.accent {
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 28px;
+    margin-top: 38px;
+    flex-wrap: wrap;
 }
 
 .card-wrapper {
     perspective: 1000;
-    margin: 0 auto 50px;
-    width: 320px;
+    margin: 0 auto 80px;
+    transition: linear 0.3s all;
+
+    &:hover {
+        transform: scale(0.9);
+
+    }
 }
 
 .front,
 .back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     backface-visibility: hidden;
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    // padding: 30px;
     box-sizing: border-box;
     transition-delay: 0.15s;
     transition: 0;
+
 }
 
 .front {
-    transform: rotateY(0deg);
+    transform: rotateX(0deg);
 }
 
 img.front-img {
@@ -218,16 +237,18 @@ img.front-img {
 }
 
 .back {
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
     opacity: 0;
     padding: 10px;
     backface-visibility: visible;
-    background: $hover_gradient;
+    background: $c_accent;
     color: $c_dark;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    border: 1px solid $c_dark;
 }
 
 .back-title {
@@ -243,44 +264,65 @@ img.front-img {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     margin-top: 16px;
 }
 
 .back-btn {
-    padding: 8px 12px;
-    background-color: $c_dark;
-    color: $c_title_white;
+    padding: 8px 16px;
+    background-color: $hover_gradient;
+    color: $c_dark;
+    border: 1px solid $c_dark;
     transition: 0.3s ease-in-out all;
 
     &:hover {
         background: $hover_gradient;
-        border: 2px dashed $c_dark;
     }
 }
 
 .card {
     position: relative;
-    width: 320px;
-    height: 200px;
-    background: white;
-    // border-radius: 5px;
-    box-shadow: 0 40px 110px rgba(0, 0, 0, 0.45);
+    width: 270px;
+    height: 150px;
+    background: transparent;
+    cursor: pointer;
+    // box-shadow: 0 40px 110px rgba(0, 0, 0, 0.45);
     overflow: hidden;
     transition: 0.5s;
     transform-style: preserve-3d;
 
-    &:hover {
-        transform: rotateY(180deg);
+    @include media_query($mobile) {
+        width: 300px;
+        height: 168px;
+    }
 
-        .front {
-            opacity: 0;
-        }
+    @include media_query($laptop) {
+        width: 380px;
+        height: 214px;
+    }
 
-        .back {
-            opacity: 1;
-        }
+    @include media_query($desktop) {
+        width: 500px;
+        height: 282px;
+    }
+}
+
+.framed {
+    box-shadow:
+        -50px -50px 0 -40px $c_accent,
+        50px 50px 0 -40px $c_accent;
+}
+
+.flip-animation {
+    transform: rotateX(180deg);
+
+    .front {
+        opacity: 0;
+    }
+
+    .back {
+        opacity: 1;
     }
 }
 
