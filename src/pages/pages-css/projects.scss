@@ -65,18 +65,24 @@ img.theme-icon {
 
     @include media_query($laptop) {
         padding: 20px;
+        padding-left: 40px;
     }
 }
 
 img.navbar-logo {
-    width: 60px;
+    width: 48px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(0.9);
+    }
 
     @include media_query($mobile) {
-        width: 80px;
+        width: 58px;
     }
 
     @include media_query($laptop) {
-        width: 100px;
+        width: 80px;
     }
 }
 
@@ -92,13 +98,15 @@ img.navbar-logo {
 
 // MATERIAL ICONS CSS START
 .material-icons {
-    cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 2rem;
 
     @include media_query($mobile) {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
+    @include media_query($tablet) {
+        font-size: 3rem;
+    }
 }
 
 .arrow-right {
@@ -167,9 +175,11 @@ img.navbar-logo {
 .main-content-title {
     @include font_accent($f_M, normal);
     align-self: flex-start;
+    padding-left: 40px;
 
     @include media_query($tablet) {
         font-size: $f_L;
+
     }
 }
 
@@ -210,6 +220,33 @@ span.accent {
     }
 }
 
+.card {
+    position: relative;
+    width: 300px;
+    height: 168px;
+    background: transparent;
+    cursor: pointer;
+    // box-shadow: 0 40px 110px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+
+    @include media_query($mobile) {
+        width: 300px;
+        height: 168px;
+    }
+
+    @include media_query($laptop) {
+        width: 380px;
+        height: 214px;
+    }
+
+    @include media_query($desktop) {
+        width: 500px;
+        height: 282px;
+    }
+}
+
 .front,
 .back {
     display: flex;
@@ -236,6 +273,20 @@ img.front-img {
     width: 100%;
 }
 
+.more-info {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    color: $c_dark;
+    background-color: #ffd166;
+    padding: 8px 12px;
+    font-size: 0.7rem;
+
+    @include media_query($laptop) {
+        font-size: 0.9rem;
+    }
+}
+
 .back {
     transform: rotateX(180deg);
     opacity: 0;
@@ -252,12 +303,21 @@ img.front-img {
 }
 
 .back-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+
+    @include media_query($laptop) {
+        font-size: 1.25rem;
+    }
 }
 
 .back-info {
-    font-size: 1rem;
+    font-size: 0.85rem;
     margin-top: 16px;
+    text-align: center;
+
+    @include media_query($laptop) {
+        font-size: 1.1rem;
+    }
 }
 
 .back-group-btns {
@@ -281,32 +341,7 @@ img.front-img {
     }
 }
 
-.card {
-    position: relative;
-    width: 270px;
-    height: 150px;
-    background: transparent;
-    cursor: pointer;
-    // box-shadow: 0 40px 110px rgba(0, 0, 0, 0.45);
-    overflow: hidden;
-    transition: 0.5s;
-    transform-style: preserve-3d;
 
-    @include media_query($mobile) {
-        width: 300px;
-        height: 168px;
-    }
-
-    @include media_query($laptop) {
-        width: 380px;
-        height: 214px;
-    }
-
-    @include media_query($desktop) {
-        width: 500px;
-        height: 282px;
-    }
-}
 
 .framed {
     box-shadow:

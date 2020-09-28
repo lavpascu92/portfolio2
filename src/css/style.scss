@@ -65,18 +65,24 @@ img.theme-icon {
 
     @include media_query($laptop) {
         padding: 20px;
+        padding-left: 60px;
     }
 }
 
 img.navbar-logo {
-    width: 60px;
+    width: 48px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(0.9);
+    }
 
     @include media_query($mobile) {
-        width: 80px;
+        width: 58px;
     }
 
     @include media_query($laptop) {
-        width: 100px;
+        width: 80px;
     }
 }
 

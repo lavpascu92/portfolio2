@@ -78,22 +78,30 @@ img.theme-icon {
 @media (min-width: 976px) {
   .navbar {
     padding: 20px;
+    padding-left: 60px;
   }
 }
 
 img.navbar-logo {
-  width: 60px;
+  width: 48px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+img.navbar-logo:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 @media (min-width: 500px) {
   img.navbar-logo {
-    width: 80px;
+    width: 58px;
   }
 }
 
 @media (min-width: 976px) {
   img.navbar-logo {
-    width: 100px;
+    width: 80px;
   }
 }
 
