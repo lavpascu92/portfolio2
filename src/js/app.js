@@ -76,7 +76,7 @@ window.addEventListener('load', () => {
 
     // FUNCTIONS
     function showOnlyOnLaptop(width) {
-        if (width < 1200) {
+        if (width < 976) {
             laptopImg.style.display = "none";
         } else {
             laptopImg.style.display = "block";
