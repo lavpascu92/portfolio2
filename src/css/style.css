@@ -232,6 +232,16 @@ img.navbar-logo:hover {
           align-items: center;
 }
 
+img#laptop-img {
+  display: none;
+}
+
+@media (min-width: 976px) {
+  img#laptop-img {
+    display: block;
+  }
+}
+
 .group-3 {
   display: -webkit-box;
   display: -ms-flexbox;
